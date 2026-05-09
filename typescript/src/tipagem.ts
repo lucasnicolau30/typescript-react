@@ -42,3 +42,41 @@ console.log(`${user1.age}`);
 console.log(`Olá, ${user2.name}`);
 console.log(`${user2.age}`);
 console.log(`${user2.car}`);
+
+enum Status {
+    Ativo = "Ativo",
+    Inativo = "Inativo",
+    Pendente = "Pendente"
+}
+
+let status: Status = Status.Pendente;
+
+console.log(status);
+
+let someValue: unknown = "this is a string";
+let strLength: number = (someValue as string).length;
+
+console.log(strLength);
+
+interface UserGenerico<T> {
+    name: T,
+    age: number,
+    car?: string | boolean
+}
+
+const userGenerico1: UserGenerico<string> = {
+    name: "Lucas",
+    age: 21
+}
+
+const userGenerico2: UserGenerico<number> = {
+    name: 123,
+    age: 20,
+    car: "Mobi"
+}       
+
+console.log(`Olá, ${userGenerico1.name}`);
+console.log(`${userGenerico1.age}`);
+console.log(`Olá, ${userGenerico2.name}`);
+console.log(`${userGenerico2.age}`);
+console.log(`${userGenerico2.car}`);
